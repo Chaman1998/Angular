@@ -1,0 +1,44 @@
+<p>This is user profile</p>
+<h4>Name : {{name}} Status : {{status}}</h4>
+
+<!-- property binding -->
+<button [disabled]="isBtnDisabled">Click me</button>
+
+<br />
+<br />
+
+<!-- Event binding -->
+<!-- here this is also called two way data binding -->
+
+<!-- <input type="text" [placeholder]="placeHolder" [value]="value" (input)="onchange($event)" /> -->
+<!-- here we print the value of input box, in the console panel -->
+
+<!-- For sortcut way to write this input box using ngModel-->
+<input type="text" [(ngModel)]="value">
+
+<!-- Show the inserted value to here -->
+<h5>Inserted value : {{value}}</h5>
+
+<!-- using foreach loop fetch the all data from "Users" -->
+<div>
+    @for(user of users;track user.name){
+    @if(user.salary > 10000){
+    <h4>Name : {{user.name}} Status : {{user.isSingle?"single" : "Coder"}} Salary : {{user.salary}}</h4>
+    }@else{
+    <h4>Name : {{user.name}} Status : {{user.isSingle?"single" : "Coder"}} Salary : hidden</h4>
+    }
+    }
+</div>
+
+<hr />
+<!-- Using Directive -->
+<div *ngFor="let user of users">
+    <!-- for print only the user salary is greater than 10000, using ngIf-->
+    <h4 *ngIf="user.salary > 10000;else elseBlock">Name : {{user.name}} Status : {{user.isSingle?"single" : "Coder"}} Salary :
+        {{user.salary}}</h4>
+
+    <ng-template #elseBlock>
+        <h4>Name : {{user.name}} Status : {{user.isSingle?"single" : "Coder"}} Salary : hidden</h4>
+    </ng-template>
+
+</div>
