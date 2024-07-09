@@ -1,11 +1,11 @@
-<p>This is user profile</p>
-<h4>Name : {{name}} Status : {{status}}</h4>
+<!-- <p>This is user profile</p>
+<h4>Name : {{name}} Status : {{status}}</h4> -->
 
 <!-- property binding -->
-<button [disabled]="isBtnDisabled">Click me</button>
+<!-- <button [disabled]="isBtnDisabled">Click me</button> -->
 
-<br />
-<br />
+<!-- <br />
+<br /> -->
 
 <!-- Event binding -->
 <!-- here this is also called two way data binding -->
@@ -14,13 +14,13 @@
 <!-- here we print the value of input box, in the console panel -->
 
 <!-- For sortcut way to write this input box using ngModel-->
-<input type="text" [(ngModel)]="value">
+<!-- <input type="text" [(ngModel)]="value"> -->
 
 <!-- Show the inserted value to here -->
-<h5>Inserted value : {{value}}</h5>
+<!-- <h5>Inserted value : {{value}}</h5> -->
 
 <!-- using foreach loop fetch the all data from "Users" -->
-<div>
+<!-- <div>
     @for(user of users;track user.name){
     @if(user.salary > 10000){
     <h4>Name : {{user.name}} Status : {{user.isSingle?"single" : "Coder"}} Salary : {{user.salary}}</h4>
@@ -30,10 +30,10 @@
     }
 </div>
 
-<hr />
+<hr /> -->
 <!-- Using Directive -->
-<div *ngFor="let user of users">
-    <!-- for print only the user salary is greater than 10000, using ngIf-->
+<!-- for print only the user salary is greater than 10000, using ngIf-->
+<!-- <div *ngFor="let user of users">
     <h4 *ngIf="user.salary > 10000;else elseBlock">Name : {{user.name}} Status : {{user.isSingle?"single" : "Coder"}} Salary :
         {{user.salary}}</h4>
 
@@ -41,4 +41,10 @@
         <h4>Name : {{user.name}} Status : {{user.isSingle?"single" : "Coder"}} Salary : hidden</h4>
     </ng-template>
 
-</div>
+</div> -->
+
+<!-- ------------------------------------------------------------------------------ -->
+
+<!-- //fetch name from parent file - app.component.ts, where we use name -->
+<h1>Test</h1>
+<h3>Name - {{name}} Status : {{isSingle?"single":"Coder"}} salary : {{salary}}</h3>
