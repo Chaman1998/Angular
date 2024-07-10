@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input, numberAttribute } from '@angular/core';
+import { booleanAttribute, Component, EventEmitter, Input, numberAttribute, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 
@@ -54,4 +54,10 @@ export class UserProfileComponent {
   @Input({transform:booleanAttribute}) isSingle!:boolean; //here string transfoem to boolean value
   @Input({transform:numberAttribute}) salary!:number; //here string transfoem to number value
   // ---------------------------------------------------------------------
+
+  //Child to parent data pass
+  @Output() myEvent = new EventEmitter<string>()
+  sendData(){
+    this.myEvent.emit("Coders never quit")
+  }
 }

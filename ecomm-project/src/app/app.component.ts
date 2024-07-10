@@ -19,4 +19,9 @@ export class AppComponent {
     { name: "nitish", isSingle: false, salary: 20000 },
     { name: "koushik", isSingle: true, salary: 15000 },
   ]
+
+  recevedData(e:string){
+    console.log(e);
+    
+  }
 }
